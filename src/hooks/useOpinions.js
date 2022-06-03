@@ -3,7 +3,7 @@ import { getAllOpinionsService } from '../services';
 
 const useOpinions = () => {
   const [opinions, setOpinions] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {

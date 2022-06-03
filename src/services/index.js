@@ -1,5 +1,6 @@
 export const getAllOpinionsService = async () => {
-    const response = await fetch(`${process.env.REACT_APP_BACKEND}`);
+  console.log(process.env.REACT_APP_BACKEND);
+    const response = await fetch(`${process.env.REACT_APP_BACKEND}/api/opinions`);
 
     const json = await response.json();
 
