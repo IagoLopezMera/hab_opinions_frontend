@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
+import { getSingleOpinionService } from "../services";
 
-const useOpinion = (id)=> {
+const useOpinion = (id) => {
 
 const [opinion, setOpinion] = useState(null);
 const [loading, setLoading] = useState(true);
@@ -11,10 +12,15 @@ useEffect(() => {
         try {
             setLoading(true);
 
+            const data = await getSingleOpinionService(id);
+            console.log(data);
+
+            setOpinion(data);
+
         } catch(error) {
-
+            setError(error.message)
         }  finally {
-
+            setLoading(false);
         }
 
     }
@@ -22,6 +28,7 @@ useEffect(() => {
     loadOpinion();
     }, [id])
 
+    return { opinion, loading, error };
 }
 
 export default useOpinion
