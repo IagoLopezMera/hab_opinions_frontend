@@ -26,7 +26,15 @@ const useOpinions = () => {
 
   }, [])
 
-  return { opinions, loading, error };
+  const addOpinion = (opinion) => { 
+    setOpinions([opinion, ...opinions])
+  }
+
+  // const removeOpinion = (opinion) => {
+  //   setOpinions(opinion.filter((opinion) => opinion.id !== id))
+  // }
+
+  return { opinions, loading, error, addOpinion, {/* removeOpinion */} };
 };
 
 export default useOpinions;
