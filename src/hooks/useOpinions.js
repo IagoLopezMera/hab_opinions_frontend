@@ -24,7 +24,7 @@ const useOpinions = () => {
 
     loadOpinions();
 
-  }, [])
+  }, [id])
 
   const addOpinion = (opinion) => { 
     setOpinions([opinion, ...opinions])
