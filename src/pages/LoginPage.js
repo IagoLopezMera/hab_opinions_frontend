@@ -1,16 +1,30 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { logInUserService } from "../services";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 export const LoginPage = () => {
+  const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const handleEmailChange = (e) => setEmail(e.target.value);
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const handlePasswordChange = (e) => setPassword(e.target.value);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     //TODO: make API call (Login)
-    setEmail("");
-    setPassword("");
+    try {
+      const token = await logInUserService({ email, password });
+      
+
+      login(token);
+      navigate("/");
+    } catch (error) {
+      setError(error.message);
+    }
+   
   };
 
   return (
@@ -41,6 +55,7 @@ export const LoginPage = () => {
         </fieldset>
 
         <button>Sign in</button>
+        {error ? <p>{error}</p> : null}
       </form>
     </section>
   );

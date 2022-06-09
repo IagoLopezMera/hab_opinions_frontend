@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { registerUserService } from "../services";
+import { useNavigate } from "react-router-dom";
+
 
 
 export const RegisterPage = () => {
- 
-
+  const navigate = useNavigate()
+  const[userName,setUserName]=useState("");
   const [email, setEmail] = useState("");
   const [pass1, setPass1] = useState("");
   const [pass2, setPass2] = useState("");
@@ -18,8 +21,8 @@ export const RegisterPage = () => {
 
     try {
         //TODO will implement API register call
-      /* await registerUserService({ email, password: pass1 });
-      navigate("/login"); */
+      await registerUserService({ userName,email, password: pass1 });
+      navigate("/login");
     } catch (error) {
       setError(error.message);
     }
@@ -28,6 +31,19 @@ export const RegisterPage = () => {
     <section>
       <h1>Register</h1>
       <form onSubmit={handleForm}>
+
+      <fieldset>
+          <label htmlFor="userName">Username</label>
+          <input
+            type="text"
+            id="userName"
+            name="userName"
+            value={userName}
+            required
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </fieldset>
+        
         <fieldset>
           <label htmlFor="email">Email</label>
           <input
