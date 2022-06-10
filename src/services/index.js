@@ -23,6 +23,20 @@ export const getSingleOpinionService = async (id) => {
   return json.data;
 };
 
+export const getAllTopicsService = async () => {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND}/api/topics`);
+    
+    const json = await response.json();
+
+    if(!response.ok) {
+        throw new Error(json.message);
+    }
+
+  return json.topics;
+  
+};
+
+
 export const getUserDataService = async (id) => {
   const response = await fetch(`${process.env.REACT_APP_BACKEND}/users/${id}`)
 

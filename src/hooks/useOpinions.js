@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getAllOpinionsService } from '../services';
 
-const useOpinions = () => {
+const useOpinions = (id) => {
   const [opinions, setOpinions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -34,7 +34,9 @@ const useOpinions = () => {
   //   setOpinions(opinion.filter((opinion) => opinion.id !== id))
   // }
 
-  return { opinions, loading, error, addOpinion, {/* removeOpinion */} };
+  // add removeOpinion to return
+
+  return { opinions, loading, error, addOpinion, };
 };
 
 export default useOpinions;
