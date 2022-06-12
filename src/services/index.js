@@ -47,3 +47,34 @@ export const registerUserService = async ({ userName, email, password }) => {
   
     return json.data;
   };
+  export const createNewOpinionService = async ({token, text, topic }) => {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND}/api/opinions`, {
+      method: "POST",
+      body: JSON.stringify({ text, topic }),
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization":token
+      },
+    });
+  
+    const json = await response.json();
+  
+    if (!response.ok) {
+      throw new Error(json.message);
+    }
+  
+    return json.data;
+  };
+
+  export const getAllTopicsService = async () => {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND}/api/topics`);
+    
+    const json = await response.json();
+
+    if(!response.ok) {
+        throw new Error(json.message);
+    }
+
+  return json.topics;
+  
+};
