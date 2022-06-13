@@ -3,6 +3,9 @@ import { logInUserService } from "../services";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
+import './LoginPage.css';
+
+
 export const LoginPage = () => {
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
@@ -28,12 +31,13 @@ export const LoginPage = () => {
   };
 
   return (
-    <section>
-      <h1>Sign in</h1>
-      <form onSubmit={handleFormSubmit}>
+    <section className="wrapper">
+      <h1 className="signIn-header">Sign in</h1>
+      <form onSubmit={handleFormSubmit} className="Login-submit-form">
         <fieldset>
-          <label htmlFor="email">Email</label>
-          <input
+          <label htmlFor="email"className="email-login-label"></label>
+          <input className="login-input"
+            placeholder="Email address"
             type="email"
             id="email"
             name="email"
@@ -43,8 +47,10 @@ export const LoginPage = () => {
           />
         </fieldset>
         <fieldset>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password"></label>
           <input
+            className="login-input"
+            placeholder="Password"
             type="password"
             id="password"
             name="password"
@@ -54,7 +60,7 @@ export const LoginPage = () => {
           />
         </fieldset>
 
-        <button>Sign in</button>
+        <button className="sign-in-button">Sign in</button>
         {error ? <p>{error}</p> : null}
       </form>
     </section>
