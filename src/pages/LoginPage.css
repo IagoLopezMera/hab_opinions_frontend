@@ -1,9 +1,4 @@
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
   
   
   .signIn-header{
@@ -17,7 +12,7 @@
      flex-direction: column;
      justify-content: center;
      align-items: center;
-     height:100vh
+     /* height:100vh; */
     
     
   }
@@ -34,9 +29,7 @@
       flex-direction:column;
       
   }
-  .email-login-label{
-    
-  }
+  
 
   .login-input{
    background-color: white;

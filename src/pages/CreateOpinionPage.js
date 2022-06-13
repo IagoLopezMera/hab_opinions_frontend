@@ -4,6 +4,8 @@ import { getAllTopicsService } from "../services";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
+import './CreateOpinionPage.css';
+
 export const CreateOpinionPage = () => {
   const navigate = useNavigate();
 
@@ -56,14 +58,14 @@ export const CreateOpinionPage = () => {
   if (loading === true) return <h1>Loading...</h1>;
 
   return (
-    <section>
-      <h1>Tell us your Opinion</h1>
-      <form onSubmit={handleFormSubmit}>
-        <label>Opinion</label>
+    <section className="create-opinion-wrapper">
+      <h1 className="Create-opinion-header">Tell us your Opinion</h1>
+      <form onSubmit={handleFormSubmit} className="create-opinion-submit-form">
+        
         <label htmlFor="topics">Choose a topic:</label>
 
         <select onChange={handleTopicChange} name="topics" id="topics">
-          <option value="">--Please choose an option--</option>
+          <option value="">--Please choose a topic--</option>
 
           {topics.map((topic) => (
             <option key={topic.idTopic} value={topic.idTopic}>
@@ -72,6 +74,8 @@ export const CreateOpinionPage = () => {
           ))}
         </select>
         <textarea
+          className="create-opinion-textarea"
+          placeholder="Tell us your opinion..."
           id="opinionText"
           name="opinionText"
           value={opinion}
@@ -80,7 +84,7 @@ export const CreateOpinionPage = () => {
           required
           onChange={handleOpinionChange}
         />
-        <button type="submit">Submit</button>
+        <button type="submit" className="Opinion-submit-button">Submit</button>
       </form>
     </section>
   );
