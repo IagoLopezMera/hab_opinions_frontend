@@ -31,13 +31,14 @@ const UpdateUser = () => {
 
     return <main>
 
-        <section>
-        <h1>Update User Email</h1>
-      <form onSubmit={handleForm}>
+        <section className="Update-user-wrapper">
+        <h1 className="Update-user-header">Update User Email</h1>
+      <form onSubmit={handleForm} className="Update-user-onsubmit-form">
 
       <fieldset>
           <label htmlFor="currentEmail">Current Email</label>
           <input
+            className="Update-user-input"
             type="email"
             id="currentEmail"
             name="currentEmail"
@@ -50,6 +51,7 @@ const UpdateUser = () => {
         <fieldset>
           <label htmlFor="email1">New email</label>
           <input
+            className="Update-user-input"
             type="email"
             id="email1"
             name="email1"
@@ -62,6 +64,7 @@ const UpdateUser = () => {
         <fieldset>
           <label htmlFor="email2">Repeat new email</label>
           <input
+            className="Update-user-input"
             type="email"
             id="email2"
             name="email2"
@@ -74,6 +77,7 @@ const UpdateUser = () => {
         <fieldset>
           <label htmlFor="pass">Password</label>
           <input
+            className="Update-user-input"
             type="password"
             id="pass"
             name="pass"
@@ -83,19 +87,20 @@ const UpdateUser = () => {
           />
         </fieldset>
 
-        <button>Update</button>
+        <button className="Update-button">Update</button>
         {error ? <p>{error}</p> : null}
       </form>
         </section>
 
 
-        <section>
-        <h1>Update Password</h1>
-      <form onSubmit={handleForm}>
+        <section className="Update-user-wrapper">
+        <h1 className="Update-user-header">Update Password</h1>
+      <form onSubmit={handleForm} className="Update-user-onsubmit-form">
 
       <fieldset>
           <label htmlFor="currentPassword">Current password</label>
           <input
+            className="Update-user-input"
             type="password"
             id="currentPassword"
             name="currentPassword"
@@ -108,6 +113,7 @@ const UpdateUser = () => {
         <fieldset>
           <label htmlFor="pass1">New password</label>
           <input
+            className="Update-user-input"
             type="password"
             id="pass1"
             name="pass1"
@@ -119,6 +125,7 @@ const UpdateUser = () => {
         <fieldset>
           <label htmlFor="pass2">Repeat new password</label>
           <input
+            className="Update-user-input"
             type="password"
             id="pass2"
             name="pass2"

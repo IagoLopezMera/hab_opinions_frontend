@@ -13,10 +13,15 @@ import UpdateUserPage from './pages/UpdateUserPage'
 import NotFoundPage from './pages/NotFoundPage';
 
 import './App.css';
+import './css/Header.css'
+import './css/Footer.css'
+import './css/Opinion.css'
+import './css/HomePage.css'
+import './css/UpdateUser.css'
 
 function App() {
   return (
-    <main>
+    <main className='app'>
       <Header />
         <Routes>
           <Route path='/' element={<HomePage />} />

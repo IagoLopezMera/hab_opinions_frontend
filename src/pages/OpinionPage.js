@@ -17,7 +17,7 @@ const OpinionPage = () => {
 
         return (
         <section>
-            <h1>Opinion from {opinion.userNameOpinion}</h1>
+            <h1>Opinion from {opinion.username}</h1>
             <Opinion opinion={opinion} />
         </section>
         )

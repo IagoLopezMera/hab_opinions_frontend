@@ -25,7 +25,7 @@ const HomePage = () => {
           <OpinionsList opinions={opinions} removeOpinion={removeOpinion}/>
         </section>
         <section>
-          <h1>Topics</h1>
+          <h3>Topics</h3>
 
           <TopicsList topics={topics} />
 

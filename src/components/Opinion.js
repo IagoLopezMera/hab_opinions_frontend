@@ -25,7 +25,7 @@ const Opinion = ({ opinion, removeOpinion }) => {
     return (
         <article className="opinion">
             <p>{opinion.text}</p>
-            <p>
+            <p className="opiniondata">
                 By <Link to={`/user/${opinion.idUser}`}>{opinion.username}</Link> on {" "}<Link to={`/opinion/${opinion.idOpinion}`}>{new Date(opinion.createdAt).toLocaleString()}</Link>{" "}{/* <Link to={`/opinion/${opinion.idTopic}`}>{topic.description}</Link> */}
             </p>
                 {user && user.idUser === opinion.idUser ? (

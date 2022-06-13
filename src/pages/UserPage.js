@@ -13,7 +13,7 @@ const UserPage = () => {
     if(error) return <ErrorMessage message={error} />;
 
     return <main>
-        <section>
+        <section className="userpage">
             <h1>User {user.username}</h1>
             <p>User email: {user.email}</p>
             <p>User id: {user.idUser}</p>
