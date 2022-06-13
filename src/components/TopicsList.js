@@ -2,7 +2,7 @@ import Topic from "./Topic"
 
 const TopicsList = ({ topics }) => {
     return topics.length ? (
-        <ul>
+        <ul className="topics-list">
             {topics.map((topic) => (
                 <li key={topic.idTopic}>
                     <Topic topic={topic} />

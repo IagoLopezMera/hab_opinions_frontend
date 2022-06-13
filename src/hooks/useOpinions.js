@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getAllOpinionsService } from '../services';
+import { getAllOpinionsService, getUserOpinionsService } from '../services';
 
 const useOpinions = (id) => {
   const [opinions, setOpinions] = useState([]);
@@ -11,7 +11,9 @@ const useOpinions = (id) => {
         try {
             setLoading(true);
 
-            const data = await getAllOpinionsService();
+            const data = id
+            ? await getUserOpinionsService(id)
+            : await getAllOpinionsService();
 
             setOpinions(data);
 
@@ -26,17 +28,16 @@ const useOpinions = (id) => {
 
   }, [id])
 
-  const addOpinion = (opinion) => { 
-    setOpinions([opinion, ...opinions])
+  const addOpinion = (data) => { 
+    setOpinions([data, ...opinions])
   }
 
-  // const removeOpinion = (opinion) => {
-  //   setOpinions(opinion.filter((opinion) => opinion.id !== id))
-  // }
+  const removeOpinion = (id) => {
+    setOpinions(opinions.filter((opinion) => opinion.id !== id))
+  }
 
-  // add removeOpinion to return
 
-  return { opinions, loading, error, addOpinion, };
+  return { opinions, loading, error, addOpinion, removeOpinion };
 };
 
 export default useOpinions;

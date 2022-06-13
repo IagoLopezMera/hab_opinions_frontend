@@ -21,6 +21,8 @@ const useUser = (id) => {
         }
         loadUser();
     }, [id])
+
+    return { user, error, loading }
 }
 
 export default useUser;

@@ -3,7 +3,7 @@ import { getSingleOpinionService } from "../services";
 
 const useOpinion = (id) => {
 
-const [opinion, setOpinion] = useState(null);
+const [opinion, setOpinion] = useState([]);
 const [loading, setLoading] = useState(true);
 const [error, setError] = useState("");
 
@@ -13,7 +13,6 @@ useEffect(() => {
             setLoading(true);
 
             const data = await getSingleOpinionService(id);
-            console.log(data);
 
             setOpinion(data);
 

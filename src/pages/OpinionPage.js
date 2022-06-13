@@ -1,7 +1,9 @@
 import { useParams } from "react-router-dom";
 import ErrorMessage from "../components/ErrorMessage";
-import Opinion from "../components/Opinion"
-import useOpinion from "../hooks/useOpinion"
+import Opinion from "../components/Opinion";
+import useOpinion from "../hooks/useOpinion";
+import Loading from "../components/Loading";
+
 
 const OpinionPage = () => {    
         const {id} = useParams()
@@ -10,7 +12,7 @@ const OpinionPage = () => {
 
         
 
-        if (loading) return <p>cargando opinión...</p>;
+        if (loading) return <Loading />;
         if (error) return <ErrorMessage message={error} />;
 
         return (

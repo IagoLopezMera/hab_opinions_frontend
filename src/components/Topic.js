@@ -1,7 +1,7 @@
 const Topic = ({ topic }) => {
 
     return (
-        <article>
+        <article className="topic">
             <p>{topic.description}</p>
 
         </article>
