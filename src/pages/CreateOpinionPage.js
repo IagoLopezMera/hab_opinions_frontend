@@ -62,9 +62,8 @@ export const CreateOpinionPage = () => {
       <h1 className="Create-opinion-header">Tell us your Opinion</h1>
       <form onSubmit={handleFormSubmit} className="create-opinion-submit-form">
         
-        <label htmlFor="topics">Choose a topic:</label>
 
-        <select onChange={handleTopicChange} name="topics" id="topics">
+        <select onChange={handleTopicChange} className="select-menu-top"name="topics" id="topics">
           <option value="">--Please choose a topic--</option>
 
           {topics.map((topic) => (
