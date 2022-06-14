@@ -3,9 +3,9 @@ import { registerUserService } from "../services";
 import { useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const[userName,setUserName]=useState("");
+  const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [pass1, setPass1] = useState("");
   const [pass2, setPass2] = useState("");
@@ -19,19 +19,19 @@ const RegisterPage = () => {
     }
 
     try {
-        //TODO will implement API register call
+      //TODO will implement API register call
       await registerUserService({ userName, email, password: pass1 });
       navigate("/login");
     } catch (error) {
       setError(error.message);
     }
   };
+
   return (
     <section>
       <h1>Register</h1>
       <form onSubmit={handleForm}>
-
-      <fieldset>
+        <fieldset>
           <label htmlFor="userName">Username</label>
           <input
             type="text"
@@ -42,7 +42,7 @@ const RegisterPage = () => {
             onChange={(e) => setUserName(e.target.value)}
           />
         </fieldset>
-        
+
         <fieldset>
           <label htmlFor="email">Email</label>
           <input
@@ -54,6 +54,7 @@ const RegisterPage = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </fieldset>
+
         <fieldset>
           <label htmlFor="pass1">Password</label>
           <input
@@ -65,6 +66,7 @@ const RegisterPage = () => {
             onChange={(e) => setPass1(e.target.value)}
           />
         </fieldset>
+
         <fieldset>
           <label htmlFor="pass2">Repeat password</label>
           <input
@@ -83,4 +85,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage
+export default RegisterPage;
