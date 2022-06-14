@@ -14,7 +14,7 @@ export const AuthContextProviderComponent = ({ children }) => {
   useEffect(() => {
     const getUserData = async () => {
       try {
-        const data = await getMyDataService({token});
+        const data = await getMyDataService({ token });
 
         setUser(data);
       } catch (error) {
@@ -34,8 +34,16 @@ export const AuthContextProviderComponent = ({ children }) => {
     setToken(token);
   };
 
+  const modifyUser = ({ email, username }) => {
+    setUser({
+      ...user,
+      email,
+      username,
+    });
+  };
+
   return (
-    <AuthContext.Provider value={{ token, user, login, logout }}>
+    <AuthContext.Provider value={{ token, user, login, logout, modifyUser }}>
       {children}
     </AuthContext.Provider>
   );

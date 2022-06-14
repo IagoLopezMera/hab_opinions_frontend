@@ -10,7 +10,7 @@ const useUser = (id) => {
         const loadUser = async () => {
             try {
                 setLoading(true);
-                const data = await getUserDataService
+                const data = await getUserDataService(id)
                 
                 setUser(data);
             } catch (error) {
