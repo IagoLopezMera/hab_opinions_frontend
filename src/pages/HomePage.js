@@ -1,20 +1,37 @@
-import OpinionsList from "../components/OpinionsList";
 import useOpinions from "../hooks/useOpinions"
+import OpinionsList from "../components/OpinionsList";
+import useTopics from "../hooks/useTopics";
+import TopicsList from "../components/TopicsList";
+import ErrorMessage from "../components/ErrorMessage";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+import Loading from "../components/Loading";
 
 const HomePage = () => {
 
-    const { opinions, loading, error } = useOpinions()
+    const { opinions, loading, error, addOpinion, removeOpinion  } = useOpinions()
+    const { topics } = useTopics()
+    const { user } = useContext(AuthContext)
+   
+    if (loading) return <Loading />;
+    if (error) return <ErrorMessage message={error} />;
 
-    if (loading) return <p>cargando opiniones...</p>;
-    if (error) return <p>{error}</p>;
+    return <main>
+        <section>
+          <h1>Latest Opinions</h1>
 
-    console.log(opinions);
+        {/* {user ? <NewOpinion addOpinion={addOpinion} /> : null} */}
 
-    return <section>
-        <h1>Latest Opinions</h1>
+          <OpinionsList opinions={opinions} removeOpinion={removeOpinion}/>
+        </section>
+        <section>
+          <h3>Topics</h3>
 
-        <OpinionsList opinions={opinions} />
-    </section>
+          <TopicsList topics={topics} />
+
+        </section>
+        
+        </main>
 }
 
 export default HomePage
