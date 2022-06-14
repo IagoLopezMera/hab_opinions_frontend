@@ -10,19 +10,17 @@ import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   return (
-    <>
-    <main>Portal de Opiniones</main>
+    <div className="main-grid">
     <Header/>
     <Routes>
     <Route path='/register' element={<RegisterPage />} />
     <Route path='/login' element={<LoginPage />} />
     <Route path='/opinion/new' element={<CreateOpinionPage/>} />
     <Route path='*' element={<NotFoundPage />} />
-
     </Routes>
     <Footer/>
     
-    </>
+    </div>
   );
 }
 

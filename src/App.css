@@ -1,0 +1,8 @@
+.main-grid{
+    display:grid;
+    grid-template-rows:15rem auto 2rem;
+    height:100vh;
+}
+.Footer{
+    align-content: end;
+}
