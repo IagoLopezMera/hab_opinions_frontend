@@ -2,13 +2,11 @@ import { useState } from "react";
 import { registerUserService } from "../services";
 import { useNavigate } from "react-router-dom";
 
-import './RegisterPage.css';
-
-
+import "./RegisterPage.css";
 
 export const RegisterPage = () => {
-  const navigate = useNavigate()
-  const[userName,setUserName]=useState("");
+  const navigate = useNavigate();
+  const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [pass1, setPass1] = useState("");
   const [pass2, setPass2] = useState("");
@@ -22,8 +20,8 @@ export const RegisterPage = () => {
     }
 
     try {
-        //TODO will implement API register call
-      await registerUserService({ userName,email, password: pass1 });
+      //TODO will implement API register call
+      await registerUserService({ userName, email, password: pass1 });
       navigate("/login");
     } catch (error) {
       setError(error.message);
@@ -31,10 +29,9 @@ export const RegisterPage = () => {
   };
   return (
     <section className="Register-wrapper">
-      <h1 className= "Register-header">Register</h1>
+      <h1 className="Register-header">Register</h1>
       <form onSubmit={handleForm} className="Register-onsubmit-form">
-
-      <fieldset>
+        <fieldset>
           <label htmlFor="userName"></label>
           <input
             className="Register-input"
@@ -47,7 +44,7 @@ export const RegisterPage = () => {
             onChange={(e) => setUserName(e.target.value)}
           />
         </fieldset>
-        
+
         <fieldset>
           <label htmlFor="email"></label>
           <input

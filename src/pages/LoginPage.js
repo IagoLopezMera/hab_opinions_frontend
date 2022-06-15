@@ -3,8 +3,7 @@ import { logInUserService } from "../services";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
-import './LoginPage.css';
-
+import "./LoginPage.css";
 
 export const LoginPage = () => {
   const navigate = useNavigate();
@@ -20,14 +19,12 @@ export const LoginPage = () => {
     //TODO: make API call (Login)
     try {
       const token = await logInUserService({ email, password });
-      
 
       login(token);
       navigate("/");
     } catch (error) {
       setError(error.message);
     }
-   
   };
 
   return (
@@ -35,8 +32,9 @@ export const LoginPage = () => {
       <h1 className="signIn-header">Sign in</h1>
       <form onSubmit={handleFormSubmit} className="Login-submit-form">
         <fieldset>
-          <label htmlFor="email"className="email-login-label"></label>
-          <input className="login-input"
+          <label htmlFor="email" className="email-login-label"></label>
+          <input
+            className="login-input"
             placeholder="Email address"
             type="email"
             id="email"
