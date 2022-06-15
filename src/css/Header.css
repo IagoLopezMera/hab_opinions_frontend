@@ -1,0 +1,36 @@
+  .app header {
+      background-color: #B3B3B3;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .app header nav ul {
+      display: flex;
+      list-style: none;
+      gap: 0.5rem;
+  }
+
+  .app header nav ul a {
+    color: white;
+    font-size: 0.8rem;
+}
+
+  .app header h1 {
+      font-size: 1.75rem;
+  }
+
+  .logout {
+    /* margin:1rem 0rem 15rem 0rem; */
+    border-radius: 6px;
+    padding:5px;
+    outline: none;
+    background-color: #FFA629;
+  }
+
+  .logout:hover{
+    background-color: #ce7800;
+    transition: background-color 0.5s ease-in-out;
+
+}

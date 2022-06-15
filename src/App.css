@@ -29,6 +29,7 @@
     align-items: center;
 }
 
+
 main.app > section.error {
     display: flex;
     flex-direction: column;

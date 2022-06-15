@@ -1,0 +1,13 @@
+article.opinion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+article.opinion p.opiniondata {
+    font-size: 0.75rem;
+}
+
+ul.opinion-list {
+    padding: 1rem;
+}
