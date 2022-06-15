@@ -37,6 +37,20 @@ export const getAllTopicsService = async () => {
   return json.topics;
 };
 
+// export const getTopicService = async (id) => {
+//   const response = await fetch(
+//     `${process.env.REACT_APP_BACKEND}/api/topics/${id}`
+//   );
+
+//   const json = await response.json();
+
+//   if (!response.ok) {
+//     throw new Error(json.message);
+//   }
+
+//   return json.topics;
+// };
+
 export const registerUserService = async ({ userName, email, password }) => {
   const response = await fetch(`${process.env.REACT_APP_BACKEND}/api/users`, {
     method: "POST",
@@ -77,6 +91,26 @@ export const updateUserService = async ({ userName, email, id, token }) => {
     {
       method: "PATCH",
       body: JSON.stringify({ userName, email }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+    }
+  );
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+};
+
+export const updatePasswordService = async ({ password, id, token }) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_BACKEND}/api/users/password/${id}`,
+    {
+      method: "PATCH",
+      body: JSON.stringify({ password }),
       headers: {
         "Content-Type": "application/json",
         Authorization: token,

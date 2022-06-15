@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { updateUserService } from "../services";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import Loading from "../components/Loading";
 
 const UpdateUser = () => {
   const navigate = useNavigate();
@@ -39,7 +40,7 @@ const UpdateUser = () => {
     }
   };
 
-  if (!user) return <p>Cargando...</p>;
+  if (!user) return <Loading />;
 
   return (
     <main>
@@ -50,6 +51,7 @@ const UpdateUser = () => {
             <label htmlFor="username">New user name</label>
             <input
               className="Update-user-input"
+              placeholder="Username"
               type="text"
               id="username"
               name="username"
@@ -62,6 +64,7 @@ const UpdateUser = () => {
             <label htmlFor="email1">New email</label>
             <input
               className="Update-user-input"
+              placeholder="New email address"
               type="email"
               id="email1"
               name="email1"
@@ -75,6 +78,7 @@ const UpdateUser = () => {
             <label htmlFor="email2">Repeat new email</label>
             <input
               className="Update-user-input"
+              placeholder="Repeat new email address"
               type="email"
               id="email2"
               name="email2"

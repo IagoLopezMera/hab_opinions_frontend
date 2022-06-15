@@ -42,8 +42,17 @@ export const AuthContextProviderComponent = ({ children }) => {
     });
   };
 
+  const modifyPassword = ({ password }) => {
+    setUser({
+      ...user,
+      password,
+    });
+  };
+
   return (
-    <AuthContext.Provider value={{ token, user, login, logout, modifyUser }}>
+    <AuthContext.Provider
+      value={{ token, user, login, logout, modifyUser, modifyPassword }}
+    >
       {children}
     </AuthContext.Provider>
   );

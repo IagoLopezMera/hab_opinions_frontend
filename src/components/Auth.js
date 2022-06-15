@@ -18,9 +18,9 @@ const Auth = () => {
       <li>
         <Link to="/login">Login</Link>
       </li>
-      <li>
+      {/* <li>
         <Link to="/opinion/new">Create Opinion</Link>
-      </li>
+      </li> */}
     </ul>
   );
 };
