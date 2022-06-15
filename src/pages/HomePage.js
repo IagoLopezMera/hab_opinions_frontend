@@ -8,9 +8,8 @@ import { AuthContext } from "../context/AuthContext";
 import Loading from "../components/Loading";
 
 const HomePage = () => {
-  const { opinions, loading, error, addOpinion, removeOpinion } = useOpinions();
+  const { opinions, loading, error, removeOpinion } = useOpinions();
   const { topics } = useTopics();
-  const { user } = useContext(AuthContext);
 
   if (loading) return <Loading />;
   if (error) return <ErrorMessage message={error} />;
@@ -19,9 +18,6 @@ const HomePage = () => {
     <main>
       <section>
         <h1>Latest Opinions</h1>
-
-        {/* {user ? <NewOpinion addOpinion={addOpinion} /> : null} */}
-
         <OpinionsList opinions={opinions} removeOpinion={removeOpinion} />
       </section>
       <section>
