@@ -1,5 +1,3 @@
-
-
   .Register-header{
     color:#FFA629;
     font-weight: 700;
@@ -28,14 +26,20 @@
     padding:9px;
     outline: none;
     background-color: #FFA629;
+    border: none;
+    color: #343a40;
+    font-size: 1rem;
+  }
+  .Register-button:hover{
+      background-color: #ce7800;
+      transition: background-color 0.5s ease-in-out;
+  
   }
 .Register-onsubmit-form{
     display:flex;
     flex-direction:column;
 }
-.Register-button:hover{
-    background-color: #ce7800;
-    transition: background-color 0.5s ease-in-out;
 
+.Register-onsubmit-form fieldset{
+  border-radius: 3px;
 }
-
