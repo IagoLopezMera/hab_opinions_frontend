@@ -12,7 +12,7 @@ const Auth = () => {
           <Link to="/opinion/new">Create Opinion</Link>
         </li>
       </ul>
-      <section>
+      <section className="logged-in">
         Logged in as <Link to={`/user/${user.idUser}`}>{user.username}</Link>{" "}
         <button onClick={() => logout()}>Logout</button>
       </section>

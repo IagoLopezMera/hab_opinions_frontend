@@ -42,3 +42,6 @@ main.app > section.error {
 .Footer {
   align-content: end;
 }
+.logged-in{
+  color:white;
+}
