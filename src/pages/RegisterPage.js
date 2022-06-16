@@ -20,7 +20,6 @@ export const RegisterPage = () => {
     }
 
     try {
-      //TODO will implement API register call
       await registerUserService({ userName, email, password: pass1 });
       navigate("/login");
     } catch (error) {
