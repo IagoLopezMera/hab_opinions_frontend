@@ -11,3 +11,23 @@ article.opinion p.opiniondata {
 ul.opinion-list {
     padding: 1rem;
 }
+.view-button{
+  border: 1px solid #FFA629;
+  padding: .5rem;
+  background-color: #FFA629;
+  color: black;
+  border-radius: 6px;
+}
+
+.delete-button{
+  padding: .6rem;
+  background-color: red;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.opinion-actions{
+    gap: 16px;
+}

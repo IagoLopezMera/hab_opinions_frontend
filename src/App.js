@@ -14,14 +14,15 @@ import UpdatePasswordPage from "./pages/UpdatePasswordPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 import "./App.css";
-/* import "./css/Header.css";
+import "./css/Header.css";
 import "./css/Footer.css";
 import "./css/Opinion.css";
+import "./css/OpinionList.css";
 import "./css/HomePage.css";
 import "./css/UpdateUser.css";
 import "./css/UpdatePassword.css";
 import "./css/UserPage.css";
- */
+
 function App() {
   return (
     <main className="app main-grid">

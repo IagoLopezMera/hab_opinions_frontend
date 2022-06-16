@@ -1,49 +1,37 @@
+.signIn-header {
+  color: #ffa629;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sign-in-button {
+  margin: 1rem 0rem 15rem 0rem;
+  border-radius: 6px;
+  padding: 9px;
+  outline: none;
+  background-color: #ffa629;
+}
+.Login-submit-form {
+  display: flex;
+  flex-direction: column;
+}
 
-  
-  
-  .signIn-header{
-      color:#FFA629;
-      font-weight: 700;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-  }
-  .wrapper{
-     display:flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     /* height:100vh; */
-    
-    
-  }
-  .sign-in-button{
-     margin:1rem 0rem 15rem 0rem;
-     border-radius: 6px;
-     padding:9px;
-     outline: none;
-     background-color: #FFA629;
-       
-  }
-  .Login-submit-form{
-      display:flex;
-      flex-direction:column;
-      
-  }
-  
+.login-input {
+  background-color: white;
+  line-height: 2.5;
+  outline: none;
+  border: none;
+  color: #495057;
+  padding-left: 9px;
+}
 
-  .login-input{
-   background-color: white;
-   line-height: 2.5;
-   outline:none;
-   border:none;
-   color: #495057;
-   padding-left: 9px; 
-  }
-
-  .sign-in-button:hover{
-      background-color: #ce7800;
-      transition: background-color 0.5s ease-in-out;
-
-  }
-
-  
+.sign-in-button:hover {
+  background-color: #ce7800;
+  transition: background-color 0.5s ease-in-out;
+}

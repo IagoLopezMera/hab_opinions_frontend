@@ -3,8 +3,6 @@ import OpinionsList from "../components/OpinionsList";
 import useTopics from "../hooks/useTopics";
 import TopicsList from "../components/TopicsList";
 import ErrorMessage from "../components/ErrorMessage";
-import { useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
 import Loading from "../components/Loading";
 
 const HomePage = () => {
@@ -20,7 +18,7 @@ const HomePage = () => {
         <h1>Latest Opinions</h1>
         <OpinionsList opinions={opinions} removeOpinion={removeOpinion} />
       </section>
-      <section>
+      <section className="aside-section">
         <h3>Topics</h3>
 
         <TopicsList topics={topics} />
