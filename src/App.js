@@ -4,8 +4,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 import HomePage from "./pages/HomePage";
-import LoginPage from "./pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
+import {LoginPage} from "./pages/LoginPage";
+import {RegisterPage} from "./pages/RegisterPage";
 import { CreateOpinionPage } from "./pages/CreateOpinionPage";
 import OpinionPage from "./pages/OpinionPage";
 import UserPage from "./pages/UserPage";
@@ -17,6 +17,7 @@ import "./App.css";
 import "./css/Header.css";
 import "./css/Footer.css";
 import "./css/Opinion.css";
+import "./css/OpinionList.css";
 import "./css/HomePage.css";
 import "./css/UpdateUser.css";
 import "./css/UpdatePassword.css";
@@ -24,7 +25,7 @@ import "./css/UserPage.css";
 
 function App() {
   return (
-    <main className="app">
+    <main className="app main-grid">
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />

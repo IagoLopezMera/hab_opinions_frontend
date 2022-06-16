@@ -42,10 +42,10 @@ const UpdatePassword = () => {
   return (
     <main>
       <section className="Update-password-wrapper">
-        <h1 className="Update-password-header">Update Pasword</h1>
+        <h1 className="Update-password-header">Update Password</h1>
         <form onSubmit={handleForm} className="Update-password-onsubmit-form">
           <fieldset>
-            <label htmlFor="pass1">New password</label>
+            {/* <label htmlFor="pass1">New password</label> */}
             <input
               className="Update-password-input"
               placeholder="New password"
@@ -59,7 +59,7 @@ const UpdatePassword = () => {
           </fieldset>
 
           <fieldset>
-            <label htmlFor="pass2">Confirm new password</label>
+            {/* <label htmlFor="pass2">Confirm new password</label> */}
             <input
               className="Update-password-input"
               placeholder="Confirm new password"

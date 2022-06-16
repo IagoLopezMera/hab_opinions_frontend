@@ -1,39 +1,47 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  a {
-      color: #FFA629;
-      text-decoration: none;
-  }
-
-  main.app {
-      min-height: 100vh;
-      display: grid;
-      gap: 1rem;
-      grid-template-rows: auto 1fr auto;
-      background-color: #F5F5F5;
-      font-family: sans-serif;
-      color: #686868;
-  }
-
-  main.app > main {
-    width: 100%;
-    padding: 1rem;
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+a {
+  color: #ffa629;
+  text-decoration: none;
+}
+
+main.app {
+  min-height: 100vh;
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: auto 1fr auto;
+  background-color: #f5f5f5;
+  font-family: sans-serif;
+  color: #686868;
+}
+
+main.app > main {
+  width: 100%;
+  padding: 1rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+}
 
 main.app > section.error {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+.main-grid {
+  display: grid;
+  grid-template-rows: 15rem auto 2rem;
+  height: 100vh;
+}
+.Footer {
+  align-content: end;
+}
+.logged-in{
+  color:white;
+}

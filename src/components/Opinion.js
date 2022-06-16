@@ -1,27 +1,6 @@
-import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { deleteOpinionService } from "../services";
-import { AuthContext } from "../context/AuthContext";
+import { Link } from "react-router-dom";
 
-const Opinion = ({ opinion, removeOpinion }) => {
-  const navigate = useNavigate();
-  const { token, user } = useContext(AuthContext);
-  const [error, setError] = useState("");
-
-  const deleteOpinion = async (id) => {
-    try {
-      await deleteOpinionService({ id, token });
-
-      if (removeOpinion) {
-        removeOpinion(id);
-      } else {
-        navigate("/");
-      }
-    } catch (error) {
-      setError(error.message);
-    }
-  };
-
+const Opinion = ({ opinion, children }) => {
   return (
     <article className="opinion">
       <p>{opinion.text}</p>
@@ -32,18 +11,7 @@ const Opinion = ({ opinion, removeOpinion }) => {
         </Link>{" "}
         {opinion.topicDescription}
       </p>
-      {user && user.idUser === opinion.idUser ? (
-        <section>
-          <button
-            onClick={() => {
-              if (window.confirm("Are you sure?")) deleteOpinion(opinion.id);
-            }}
-          >
-            Delete opinion
-          </button>
-          {error ? <p>{error}</p> : null}
-        </section>
-      ) : null}
+      <section className="opinion-actions">{children}</section>
     </article>
   );
 };

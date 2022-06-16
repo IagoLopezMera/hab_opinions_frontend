@@ -46,9 +46,8 @@ const UpdateUser = () => {
     <main>
       <section className="Update-user-wrapper">
         <h1 className="Update-user-header">Update User Email</h1>
-        <form onSubmit={handleForm} className="Update-user-onsubmit-form">
+       <form onSubmit={handleForm} className="Register-onsubmit-form">
           <fieldset>
-            <label htmlFor="username">New user name</label>
             <input
               className="Update-user-input"
               placeholder="Username"
@@ -61,7 +60,6 @@ const UpdateUser = () => {
             />
           </fieldset>
           <fieldset>
-            <label htmlFor="email1">New email</label>
             <input
               className="Update-user-input"
               placeholder="New email address"
@@ -75,9 +73,8 @@ const UpdateUser = () => {
           </fieldset>
 
           <fieldset>
-            <label htmlFor="email2">Repeat new email</label>
             <input
-              className="Update-user-input"
+              className="Register-input"
               placeholder="Repeat new email address"
               type="email"
               id="email2"
@@ -88,7 +85,7 @@ const UpdateUser = () => {
             />
           </fieldset>
 
-          <button className="Update-user-button">Update</button>
+          <button className="Register-button">Update</button>
           {error ? <p>{error}</p> : null}
         </form>
       </section>
