@@ -36,7 +36,7 @@ const Opinion = ({ opinion, removeOpinion }) => {
         <section>
           <button
             onClick={() => {
-              if (window.confirm("Are you sure?")) deleteOpinion(opinion.id);
+              if (window.confirm("Are you sure?")) deleteOpinion(opinion.idOpinion);
             }}
           >
             Delete opinion

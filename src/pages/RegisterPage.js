@@ -2,9 +2,10 @@ import { useState } from "react";
 import { registerUserService } from "../services";
 import { useNavigate } from "react-router-dom";
 
-const RegisterPage = () => {
-  const navigate = useNavigate();
+import "./RegisterPage.css";
 
+export const RegisterPage = () => {
+  const navigate = useNavigate();
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [pass1, setPass1] = useState("");
@@ -26,14 +27,15 @@ const RegisterPage = () => {
       setError(error.message);
     }
   };
-
   return (
-    <section>
-      <h1>Register</h1>
-      <form onSubmit={handleForm}>
+    <section className="Register-wrapper">
+      <h1 className="Register-header">Register</h1>
+      <form onSubmit={handleForm} className="Register-onsubmit-form">
         <fieldset>
-          <label htmlFor="userName">Username</label>
+          <label htmlFor="userName"></label>
           <input
+            className="Register-input"
+            placeholder="Username"
             type="text"
             id="userName"
             name="userName"
@@ -44,8 +46,10 @@ const RegisterPage = () => {
         </fieldset>
 
         <fieldset>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email"></label>
           <input
+            className="Register-input"
+            placeholder="Email address"
             type="email"
             id="email"
             name="email"
@@ -54,10 +58,11 @@ const RegisterPage = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </fieldset>
-
         <fieldset>
-          <label htmlFor="pass1">Password</label>
+          <label htmlFor="pass1"></label>
           <input
+            className="Register-input"
+            placeholder="Password"
             type="password"
             id="pass1"
             name="pass1"
@@ -66,10 +71,11 @@ const RegisterPage = () => {
             onChange={(e) => setPass1(e.target.value)}
           />
         </fieldset>
-
         <fieldset>
-          <label htmlFor="pass2">Repeat password</label>
+          <label htmlFor="pass2"></label>
           <input
+            className="Register-input"
+            placeholder="Repeat password"
             type="password"
             id="pass2"
             name="pass2"
@@ -78,11 +84,9 @@ const RegisterPage = () => {
             onChange={(e) => setPass2(e.target.value)}
           />
         </fieldset>
-        <button>Register</button>
+        <button className="Register-button">Register</button>
         {error ? <p>{error}</p> : null}
       </form>
     </section>
   );
 };
-
-export default RegisterPage;

@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { getAllTopicsService } from '../services';
+import { useEffect, useState } from "react";
+import { getAllTopicsService } from "../services";
 
 const useTopics = () => {
   const [topics, setTopics] = useState([]);
@@ -8,23 +8,21 @@ const useTopics = () => {
 
   useEffect(() => {
     const loadTopics = async () => {
-        try {
-            setLoading(true);
+      try {
+        setLoading(true);
 
-            const data = await getAllTopicsService();
+        const data = await getAllTopicsService();
 
-            setTopics(data);
-
-        } catch (error){
-            setError(error.message)
-        } finally {
-            setLoading(false)
-        }
-    }
+        setTopics(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
 
     loadTopics();
-
-  }, [])
+  }, []);
 
   return { topics, loading, error };
 };
