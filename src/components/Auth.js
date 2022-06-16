@@ -1,9 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Auth = () => {
   const { user, logout } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
+  function logoutAndNavigateToHomepage() {
+    logout();
+    navigate("/");
+  }
 
   return user ? (
     <>
@@ -14,7 +22,12 @@ const Auth = () => {
       </ul>
       <section className="logged-in">
         Logged in as <Link to={`/user/${user.idUser}`}>{user.username}</Link>{" "}
-        <button onClick={() => logout()}>Logout</button>
+        <button
+          onClick={() => logoutAndNavigateToHomepage()}
+          className="logout"
+        >
+          Logout
+        </button>
       </section>
     </>
   ) : (

@@ -25,13 +25,19 @@
     padding:9px;
     outline: none;
     background-color: #FFA629;
+    border: none;
+    color: #343a40;
+    font-size: 1rem;
+  }
+  .Update-user-button:hover{
+      background-color: #ce7800;
+      transition: background-color 0.5s ease-in-out;
+  
   }
 .Update-user-onsubmit-form{
     display:flex;
     flex-direction:column;
 }
-.Update-user-button:hover{
-    background-color: #ce7800;
-    transition: background-color 0.5s ease-in-out;
-
+.Update-user-onsubmit-form fieldset{
+  border-radius: 3px;
 }
