@@ -16,9 +16,9 @@ export const LoginPage = () => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    //TODO: make API call (Login)
+
     try {
-      const token = await logInUserService({ email, password });
+      const token = await logInUserService({ email, password });    
 
       login(token);
       navigate("/");
