@@ -16,10 +16,23 @@
   padding: 9px;
   outline: none;
   background-color: #ffa629;
+  border: none;
+  color: #343a40;
+  font-size: 1rem;
 }
+
+.sign-in-button:hover {
+  background-color: #ce7800;
+  transition: background-color 0.5s ease-in-out;
+}
+
 .Login-submit-form {
   display: flex;
   flex-direction: column;
+}
+
+.Login-submit-form fieldset{
+  border-radius: 3px;
 }
 
 .login-input {
@@ -31,7 +44,3 @@
   padding-left: 9px;
 }
 
-.sign-in-button:hover {
-  background-color: #ce7800;
-  transition: background-color 0.5s ease-in-out;
-}

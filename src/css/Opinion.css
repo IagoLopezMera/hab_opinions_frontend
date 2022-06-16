@@ -17,6 +17,7 @@ ul.opinion-list {
   background-color: #FFA629;
   color: #343a40;
   border-radius: 6px;
+  font-size: 0.85rem;
 }
 
 .delete-button{

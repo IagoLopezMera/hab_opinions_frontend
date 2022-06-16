@@ -9,6 +9,8 @@ main.app > main section {
 main.app > main h1 {
     margin-bottom: 1rem;
     color: #FFA629;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.85rem;
 }
 
 ul.opinions-list {
@@ -47,11 +49,13 @@ ul.topics-list {
   main.app > section h1 {
     margin-bottom: 1rem;
     color: #FFA629;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 main.app h3 {
     margin-bottom: 0.75rem;
     color: #FFA629;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .aside-section {
