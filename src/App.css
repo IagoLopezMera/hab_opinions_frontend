@@ -42,3 +42,7 @@ main.app > section.error {
 .Footer {
   align-content: end;
 }
+
+.create_opinion {
+  color: red;
+}
