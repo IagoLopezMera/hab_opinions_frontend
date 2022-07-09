@@ -17,7 +17,9 @@ const Auth = () => {
     <>
       <ul>
         <li>
-          <Link to="/opinion/new">Create Opinion</Link>
+          <Link to="/opinion/new" className="create_opinion">
+            <button className="create-opinion-button">Create Opinion</button>
+          </Link>
         </li>
       </ul>
       <section className="logged-in">
